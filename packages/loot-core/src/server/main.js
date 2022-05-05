@@ -1531,7 +1531,9 @@ handlers['get-budgets'] = async function() {
   const paths = await fs.listDir(fs.getDocumentDir());
   const budgets = (await Promise.all(
     paths.map(async name => {
+
       const prefsPath = fs.join(fs.getDocumentDir(), name, 'metadata.json');
+      console.log("Hi There, ", paths, prefsPath)
       if (await fs.exists(prefsPath)) {
         let prefs;
         try {

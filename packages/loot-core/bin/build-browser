@@ -7,7 +7,7 @@ WEBPACK_ARGS=""
 "$ROOT"/copy-migrations
 
 OUTPUT_HASH="[hash]"
-if [ $NODE_ENV == 'development' ]; then
+if [ $NODE_ENV = 'development' ]; then
     # Use a constant filename in development mode to make it easier to
     # rebuild the backend without having to rebuild the frontend
     OUTPUT_HASH="dev"
@@ -17,7 +17,7 @@ fi
 rm -f ../lib-dist/browser/*
 rm -rf ../../desktop-client/public/kcab
 
-if [ $NODE_ENV == 'development' ]; then
+if [ $NODE_ENV = 'development' ]; then
   # In dev mode, always enable watch mode and symlink the build files.
   # Make sure to do this before starting the build since watch mode
   # will block
@@ -33,7 +33,7 @@ fi
   $WEBPACK_ARGS
 
 
-if [ $NODE_ENV == 'production' ]; then
+if [ $NODE_ENV = 'production' ]; then
   # In production, just copy the built files
   mkdir ../../desktop-client/public/kcab
   cp -r ../lib-dist/browser/* ../../desktop-client/public/kcab

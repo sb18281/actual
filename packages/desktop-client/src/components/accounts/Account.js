@@ -211,7 +211,7 @@ function ReconcileTooltip({ account, onReconcile, onClose }) {
       <View style={{ padding: '5px 8px' }}>
         <Text>
           Enter the current balance of your bank account that you want to
-          reconcile with:
+          reconcile withs:
         </Text>
         <form onSubmit={onSubmit}>
           {balance != null && (
